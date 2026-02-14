@@ -2,7 +2,7 @@ import { HashRouter, Route, Routes } from "react-router";
 import { Layout } from "./Layout";
 
 export const BasicPage = () => {
-  return <div>AppRouter init</div>;
+  return <div>hello friends</div>;
 };
 
 export const AppRouter = () => {
