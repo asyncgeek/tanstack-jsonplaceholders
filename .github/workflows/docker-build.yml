@@ -1,0 +1,25 @@
+name: Docker Build Check
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descarga el código de tu repositorio
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Configura el motor de Docker en el servidor de GitHub
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 3. Intenta construir la imagen usando TU Dockerfile
+      - name: Build Docker image
+        run: |
+          docker build -t mi-app-tanstack:latest .
