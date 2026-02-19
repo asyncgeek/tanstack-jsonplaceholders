@@ -1,9 +1,9 @@
 import { HashRouter, Route, Routes } from "react-router";
 import { Layout } from "./Layout";
-
-export const BasicPage = () => {
-  return <div>hello friends and modify again, test with github actions</div>;
-};
+import { BasicPage } from "./pages/BasicPage";
+import { Users } from "./pages/Users";
+import { Todos } from "./pages/Todos";
+import { Posts } from "./pages/Posts";
 
 export const AppRouter = () => {
   return (
@@ -11,6 +11,9 @@ export const AppRouter = () => {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<BasicPage />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/todos" element={<Todos />} />
+          <Route path="/posts" element={<Posts />} />
         </Route>
       </Routes>
     </HashRouter>
